@@ -1,0 +1,97 @@
+
+1.
+
+ Maximum Profit on App
+Send Feedback
+You have made a smartphone app and want to set its price such that the profit earned is maximised. There are certain buyers who will buy your app only if their budget is greater than or equal to your price.
+You will be provided with a list of size N having budgets of buyers and you need to return the maximum profit that you can earn.
+Lets say you decide that price of your app is Rs. x and there are N number of buyers. So maximum profit you can earn is :
+
+ m * x
+
+
+sol:
+#include <algorithm> bi;
+int maximumProfit(int budget[], int n) {
+    // Write your code here
+sort(budget, budget+n); 
+    int max;
+    
+    for(int i=0;i<n;i++){
+        
+        int profit= budget[i]*(n-i);
+        if(profit>max){
+            max=profit;
+        }
+    }
+	
+    return max;
+}
+
+2.
+
+ Equal Sum Pair
+Send Feedback
+Given an integer array of size N, determine whether 4 elements exist such that a+b = c+d. Return true or false accordingly.
+Perform this in O(n^2).
+Note : (a+b) and (c+d) is unique. For eg, array(10, 10, 8, 9) Pair(10(at index 0),8) and Pair(10(at index 1),8) are different pairs but Pair(10(index 0),10(index 1)) and Pair(10(index 1),10(index0)) are same.
+Input Format :
+
+sol:
+import java.util.*;
+import java.io.*;
+public class Solution{
+/*class ArrayElements 
+{ 
+    // Class to represent a pair 
+    class pair 
+    { 
+        int first, second; 
+        pair(int f,int s) 
+        { 
+            first = f; second = s; 
+        } 
+    }; */
+	public static boolean findPairs(int[] arr){
+        /* Your class should be named Solution
+         * Don't write main().
+         * Don't read input, it is passed as function argument.
+         * Return the desired output and don't print anything.
+         * Taking input and printing output is handled automatically.
+         */
+       
+        // Create an empty Hash to store mapping from sum to 
+        // pair indexes 
+       map<int, pair<int, int> > hash_table;
+    
+   	for (int i = 0; i < n; ++i) {
+    	for (int j = i + 1; j < n; ++j) {
+         	int sum = arr[i] + arr[j];
+         	if (hash_table.find(sum) == hash_table.end())
+            	hash_table[sum] = make_pair(i, j);
+         	else {
+            	pair<int, int> pp = hash_table[sum];
+            return true;
+         }
+      }
+   }
+   return false;
+    } 
+	}
+
+
+3.
+ Find smallest substring
+Send Feedback
+Given two strings string1 and string2 (named large and small), find the smallest substring in string1 containing all characters of string2 in O(n). You need to return the output substring.
+Note : The characters of string2 need not to be present in same order in string1. That is, we need a substring which contains all characters of string2 irrespective of the order.
+Return null if no substring with all characters is present.
+Input format :
+
+Line 1 : String 1
+Line 2 : String 2
+
+Output Format :
+
+Smallest substring
+
