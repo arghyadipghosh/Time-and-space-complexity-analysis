@@ -1,0 +1,908 @@
+1.
+ Arrays Sum
+Send Feedback
+Given an array/list(ARR) of length N, you need to find and return the sum of all the elements in the array/list.
+Input Format :
+
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first line of each test case or query contains an integer 'N' representing the size of the array/list.
+
+Second line contains 'N' single space separated integers representing the elements in the array/list.
+
+sol:
+
+public class Solution {
+	
+	public static int sum(int[] arr) {
+		//Your code goes here
+        int sum=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            sum+=arr[i];
+        }
+        return sum;
+	}
+}
+
+2.
+ Linear Search
+Send Feedback
+You have been given a random integer array/list(ARR) of size N, and an integer X. You need to search for the integer X in the given array/list using 'Linear Search'.
+ You have been required to return the index at which X is present in the array/list. If X has multiple occurrences in the array/list, then you need to return the index at which the first occurrence of X would be encountered. In case X is not present in the array/list, then return -1.
+'Linear search' is a method for finding an element within an array/list. It sequentially checks each element of the array/list until a match is found or the whole array/list has been searched.
+Input format :
+
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+First line of each test case or query contains an integer 'N' representing the size of the array/list.
+
+Second line contains 'N' single space separated integers representing the elements in the array/list.
+
+Third line contains the value of X(integer to be searched in the given array/list)
+
+
+sol: public class Solution {
+
+    public static int linearSearch(int arr[], int x) {
+		//Your code goes here
+        int a=-1;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(x==arr[i])
+            {
+                a=i;
+            }
+            
+        }
+        return a;
+    }
+}
+
+3.
+ Arrange Numbers in Array
+Send Feedback
+You have been given an empty array(ARR) and its size N. The only input taken from the user will be N and you need not worry about the array.
+Your task is to populate the array using the integer values in the range 1 to N(both inclusive) in the order - 1,3,.......4,2.
+Note:
+
+You need not print the array. You only need to populate it.
+
+Input Format :
+
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first and the only line of each test case or query contains an integer 'N'.
+
+
+sol:
+public class Solution {
+    
+    public static void arrange(int[] arr, int n) {
+    	//Your code goes here
+        int i=0;
+        int j=n-1;
+        int c=1;
+        while(i<=j)
+        {
+            if(c%2==1)
+            {
+                arr[i]=c;
+                c++;
+                i++;
+            }
+            else
+            {
+                arr[j]=c;
+                c++;
+                j--;
+            }
+        }
+    }
+}
+
+4.
+ Swap Alternate
+Send Feedback
+You have been given an array/list(ARR) of size N. You need to swap every pair of alternate elements in the array/list.
+You don't need to print or return anything, just change in the input array itself.
+Input Format :
+
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+First line of each test case or query contains an integer 'N' representing the size of the array/list.
+
+Second line contains 'N' single space separated integers representing the elements in the array/list.
+
+
+sol:
+public class Solution {
+   
+    
+    public static void swapAlternate(int arr[]) {
+    	//Your code goes here
+        int i=0;
+        while(i<arr.length)
+        {
+            int temp=arr[i];
+            arr[i]=arr[i+1];
+            arr[i+1]=temp;
+            i+=2;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+5.
+ Count Words
+Send Feedback
+Given a string S, count number of words in the string.
+Note : Assume there is single space between two words and there are no extra spaces before and after words.
+
+
+Input Format :
+
+ String S
+
+Output Format :
+
+Count of words
+
+sol:
+
+public class Solution {
+
+	public static int countWords(String str){
+	
+		/* Your class should be named Solution
+	 	* Don't write main().
+	 	* Don't read input, it is passed as function argument.
+	 	* Return output and don't print it.
+	 	* Taking input and printing output is handled automatically.
+		*/
+      int count=0;  
+      
+      for(int i=0;i<str.length();i++)
+      {
+          if(str.charAt(i)==' ')
+          {
+              count++;
+          }
+      }
+ return count+1;
+	}
+	
+
+}
+
+
+6.
+ Check Palindrome
+Send Feedback
+Given a String s, check it its palindrome. Return true if string is palindrome, else return false.
+Palindrome strings are those, where string s and its reverse is exactly same.
+Input Format :
+
+ String S
+
+Output Format :
+
+"true" if S is palindrome, else "false"
+
+
+sol:
+public class Solution {
+
+	public static boolean checkPalindrome(String str){
+		/* Your class should be named Solution
+		* Don't write main().
+		* Don't read input, it is passed as function argument.
+		* Return output and don't print it.
+		* Taking input and printing output is handled automatically.
+		*/
+      /* int i=0,j=str.length()-1;
+        while(i<j)
+        {
+            if(str.charAt(i)!=str.charAt(j))
+            {
+              return false;
+            }
+            i++;
+        j--;  
+        }
+      
+        return true;*/
+        int i=0,j=str.length()-1;
+        while(i<j)
+        {
+            if(str.charAt(i)!=str.charAt(j))
+            {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+
+	}
+}
+
+
+7.
+ Print All Substrings
+Send Feedback
+Given a String S of length n, print all its substrings.
+Substring of a String S is a part of S (of any length from 1 to n), which contains all consecutive characters from S.
+Input Format :
+
+String S
+
+Output Format :
+
+ All Substrings of S, one in each line.
+
+Constraints :
+
+0 <= |S| <= 10^2
+where |S| represents the length of string, S.
+
+
+sol:
+public class Solution {
+
+	public static void printSubstrings(String str){
+	
+		/* Your class should be named Solution
+	 	* Don't write main().
+	 	* Don't read input, it is passed as function argument.
+	 	* Print output as specified in the question.
+		*/
+        for(int i=0;i<str.length();i++)
+        {    
+        for(int j=i+1;j<=str.length();j++)
+        {
+            System.out.println(str.substring(i,j));
+        }
+        }
+	}
+	
+
+}
+
+
+8.
+ Reverse String Word Wise
+Send Feedback
+Reverse the given string word wise. That is, the last word in given string should come at 1st place, last second word at 2nd place and so on. Individual words should remain as it is.
+Input format :
+
+String in a single line
+
+Output format :
+
+Word wise reversed string in a single line
+
+
+sol:public class Solution {
+	public static String reverseWordWise(String input) {
+		// Write your code here
+        int end=input.length();
+        int i = input.length()-1;
+        String output="";
+        while(i>=0)
+        {
+            if(input.charAt(i)==' ')
+            {
+                output=output+input.substring(i+1,end)+" ";
+                end=i;
+            }
+            i--;
+        }
+        output+=input.substring(i+1,end);
+        return output;
+        
+
+	}
+}
+
+
+9.
+ Row Wise Sum
+Send Feedback
+For a given two-dimensional integer array/list of size (N x M), find and print the sum of each of the row elements in a single line, separated by a single space.
+Input Format :
+
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+First line of each test case or query contains two integer values, 'N' and 'M', separated by a single space. They represent the 'rows' and 'columns' respectively, for the two-dimensional array/list.
+
+Second line onwards, the next 'N' lines or rows represent the ith row values.
+
+Each of the ith row constitutes 'M' column values separated by a single space.
+
+
+sol:
+import java.util.*;
+public class Solution {
+
+	public static void rowWiseSum(int[][] mat) {
+		//Your code goes here
+     Scanner s=new Scanner(System.in);
+        int sum=0;
+        int j,k;
+        int r=mat.length;
+       
+        if(r==0)
+        {
+            return;
+        }
+        else{
+             int c=mat[0].length;
+            for(j=0;j<r;j++)
+            {
+                for(k=0;k<c;k++)
+                {
+                    sum+=mat[j][k];
+                }
+                System.out.print(sum+" ");
+                sum=0;
+            }
+        }
+            
+        }
+}
+
+
+10.
+
+ Largest Row or Column
+Send Feedback
+For a given two-dimensional integer array/list of size (N x M), you need to find out which row or column has the largest sum(sum of all the elements in a row/column) amongst all the rows and columns.
+Note :
+
+If there are more than one rows/columns with maximum sum, consider the row/column that comes first. And if ith row and jth column has the same largest sum, consider the ith row as answer.
+
+
+sol:
+import java.util.*;
+public class Solution {
+
+	public static void findLargest(int mat[][]){
+	
+
+        int rows = mat.length;
+       
+        if(rows==0)
+        {
+            return;
+        }
+        else{
+            
+         int columns = mat[0].length;
+        int largest = Integer.MIN_VALUE;
+        int x = 0;
+        int sum1 = 0;
+        int sum2 = 0;
+        String s = "";
+        for(int i=0;i<rows;i++) {
+            sum1 = 0;
+            int j = 0;
+            for(;j<columns;j++) {
+                sum1 += mat[i][j];
+            }
+            if(sum1>largest) {
+                largest = sum1;
+                x = i;
+                s = "row";
+            }
+        }
+        for(int i=0;i<columns;i++) {
+            sum2 = 0;
+            int j = 0;
+            for(;j<rows;j++) {
+                sum2 += mat[j][i];
+            }
+            if(sum2>largest) {
+                largest = sum2;
+                x = i;
+                s = "column";
+            }
+        }
+        
+    System.out.println(s + " " + x + " " + largest);
+    }
+    
+    }
+}
+
+11.
+ Wave Print
+Send Feedback
+For a given two-dimensional integer array/list of size (N x M), print the array/list in a sine wave order, i.e, print the first column top to bottom, next column bottom to top and so on.
+Input format :
+
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+First line of each test case or query contains two integer values, 'N' and 'M', separated by a single space. They represent the 'rows' and 'columns' respectively, for the two-dimensional array/list.
+
+Second line onwards, the next 'N' lines or rows represent the ith row values.
+
+Each of the ith row constitutes 'M' column values separated by a single space.
+
+
+sol:
+
+public class Solution {
+
+	public static void wavePrint(int mat[][]){
+		
+		System.out.println();
+		int row=mat.length;
+        if(row==0)
+        {
+            return;
+        }
+        else{
+		int col=mat[0].length;
+		for(int i=0;i<col;i++)
+		{
+			if(i%2==0)
+			{
+				for(int j=0;j<row;j++)
+				{
+					System.out.print(mat[j][i]+" ");
+				}
+			}
+			else
+			{
+				for(int j=row-1;j>=0;j--)
+				{
+					System.out.print(mat[j][i]+" ");
+				}
+			}
+        }
+		}
+	}
+}
+
+12.
+ Spiral Print
+Send Feedback
+For a given two-dimensional integer array/list of size (N x M), print it in a spiral form. That is, you need to print in the order followed for every iteration:
+
+a. First row(left to right)
+b. Last column(top to bottom)
+c. Last row(right to left)
+d. First column(bottom to top)
+
+ Mind that every element will be printed only once.
+
+sol:
+
+public class Solution {
+
+	public static void spiralPrint(int matrix[][]){
+		//Your code goes here
+         
+        int i, k = 0, l = 0; 
+        /*  k - starting row index 
+        m - ending row index 
+        l - starting column index 
+        n - ending column index 
+        i - iterator 
+        */
+        int m=matrix.length;
+        if(m==0){
+            return;
+        }
+        else{
+        int n=matrix[0].length;
+        while (k < m && l < n) { 
+            // Print the first row from the remaining rows 
+            for (i = l; i < n; ++i) { 
+                System.out.print(matrix[k][i] + " "); 
+            } 
+            k++; 
+  
+            // Print the last column from the remaining columns 
+            for (i = k; i < m; ++i) { 
+                System.out.print(matrix[i][n - 1] + " "); 
+            } 
+            n--; 
+  
+            // Print the last row from the remaining rows */ 
+            if (k < m) { 
+                for (i = n - 1; i >= l; --i) { 
+                    System.out.print(matrix[m - 1][i] + " "); 
+                } 
+                m--; 
+            } 
+  
+            // Print the first column from the remaining columns */ 
+            if (l < n) { 
+                for (i = m - 1; i >= k; --i) { 
+                    System.out.print(matrix[i][l] + " "); 
+                } 
+                l++; 
+            }
+        }
+        } 
+    } 
+	
+}
+
+
+
+
+
+ASSIGNEMENT:
+
+
+1. Sort 0 1 2
+Send Feedback
+You are given an integer array/list(ARR) of size N. It contains only 0s, 1s and 2s. Write a solution to sort this array/list in a 'single scan'.
+'Single Scan' refers to iterating over the array/list just once or to put it in other words, you will be visiting each element in the array/list just once.
+
+sol:
+
+
+public class Solution { 
+
+	// Sort the input array, the array is assumed to 
+	// have values in {0, 1, 2} 
+	public static void sort012(int[] arr) 
+	{ 
+        int arr_size=arr.length;
+		int lo = 0; 
+		int hi = arr_size - 1; 
+		int mid = 0, temp = 0; 
+		while (mid <= hi) { 
+			switch (arr[mid]) { 
+			case 0: { 
+				temp = arr[lo]; 
+				arr[lo] = arr[mid]; 
+				arr[mid] = temp; 
+				lo++; 
+				mid++; 
+				break; 
+			} 
+			case 1: 
+				mid++; 
+				break; 
+			case 2: { 
+				temp = arr[mid]; 
+				arr[mid] = arr[hi]; 
+				arr[hi] = temp; 
+				hi--; 
+				break; 
+			} 
+			} 
+		} 
+	} 
+
+}
+	
+
+2.
+ Push Zeros to end
+Send Feedback
+You have been given a random integer array/list(ARR) of size N. You have been required to push all the zeros that are present in the array/list to the end of it. Also, make sure to maintain the relative order of the non-zero elements.
+
+sol:
+public class Solution {  
+
+    public static void pushZerosAtEnd(int[] arr) {
+    	//Your code goes here
+      int n=arr.length;
+        int count = 0;  // Count of non-zero elements 
+  
+        // Traverse the array. If element encountered is 
+        // non-zero, then replace the element at index 'count' 
+        // with this element 
+        for (int i = 0; i < n; i++) 
+            if (arr[i] != 0) 
+                arr[count++] = arr[i]; // here count is 
+                                       // incremented 
+  
+        // Now all non-zero elements have been shifted to 
+        // front and 'count' is set as index of first 0. 
+        // Make all elements 0 from count to end. 
+        while (count < n) 
+            arr[count++] = 0; 
+    } 
+    }
+
+
+
+3.
+ Count platforms
+Send Feedback
+Given two arrays (both of size n), one containing arrival time of trains and other containing the corresponding trains departure time (in the form of an integer) respectively. Return the minimum number of platform required, such that no train waits.
+Arrival and departure time of a train can't be same.
+
+sol:
+import java.util.*;
+public class Solution {
+
+	public static int platformsNeeded(int arrival[], int departure[]){
+
+        // Sort arrival and departure arrays 
+        Arrays.sort(arrival); 
+        Arrays.sort(departure); 
+  
+        // plat_needed indicates number of platforms 
+        // needed at a time 
+        int plat_needed = 1, result = 1; 
+        int i = 1, j = 0; 
+        int n=arrival.length;
+        // Similar to merge in merge sort to process 
+        // all events in sorted order 
+        while (i < n && j < n) { 
+            // If next event in sorted order is arrival, 
+            // increment count of platforms needed 
+            if (arrival[i] <= departure[j]) { 
+                plat_needed++; 
+                i++; 
+            } 
+  
+            // Else decrement count of platforms needed 
+            else if (arrival[i] > departure[j]) { 
+                plat_needed--; 
+                j++; 
+            } 
+  
+            // Update result if needed 
+            if (plat_needed > result) 
+                result = plat_needed; 
+        } 
+  
+        return result; 
+    
+		
+	}
+	
+}
+
+
+4.
+ Leaders in array
+Send Feedback
+Given an integer array A of size n. Find and print all the leaders present in the input array. An array element A[i] is called Leader, if all the elements following it (i.e. present at its right) are less than or equal to A[i].
+Print all the leader elements separated by space and in the same order they are present in the input array
+
+sol:
+public class Solution {
+
+	public static void leaders(int[] input) {
+		/* Your class should be named Solution 
+		 * Don't write main(). 
+		 * Don't read input, it is passed as function argument. 
+		 * Print output and don't return it. 
+		 * Taking input is handled automatically. 
+		 */
+        int size=input.length;
+       for (int i = 0; i < size; i++)  
+        { 
+            int j; 
+            for (j = i + 1; j < size; j++)  
+            { 
+                if (input[i] < input[j]) 
+                    break; 
+            } 
+            if (j == size) // the loop didn't break 
+                System.out.print(input[i] + " "); 
+        } 
+     
+    
+		
+	}
+	
+}
+
+
+5.
+ Print Like a Wave
+Send Feedback
+For a given two-dimensional integer array/list of size (N x M), print the array/list in a sine wave order, i.e, print the first column top to bottom, next column bottom to top and so on.
+Input format :
+
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+First line of each test case or query contains two integer values, 'N' and 'M', separated by a single space. They represent the 'rows' and 'columns' respectively, for the two-dimensional array/list.
+
+Second line onwards, the next 'N' lines or rows represent the ith row values.
+
+Each of the ith row constitutes 'M' column values separated by a single space.
+
+Output format :
+
+sol:
+
+public class Solution {
+
+	public static void wavePrint(int mat[][]){
+		
+		System.out.println();
+		int row=mat.length;
+        if(row==0)
+        {
+            return;
+        }
+        else{
+		int col=mat[0].length;
+		for(int i=0;i<col;i++)
+		{
+			if(i%2==0)
+			{
+				for(int j=0;j<row;j++)
+				{
+					System.out.print(mat[j][i]+" ");
+				}
+			}
+			else
+			{
+				for(int j=row-1;j>=0;j--)
+				{
+					System.out.print(mat[j][i]+" ");
+				}
+			}
+        }
+		}
+	}
+}
+
+
+6.
+ Print Spiral
+Send Feedback
+For a given two-dimensional integer array/list of size (N x M), print it in a spiral form. That is, you need to print in the order followed for every iteration:
+
+a. First row(left to right)
+b. Last column(top to bottom)
+c. Last row(right to left)
+d. First column(bottom to top)
+
+ Mind that every element will be printed only once.
+
+sol:
+
+public class Solution {
+
+	public static void spiralPrint(int matrix[][]){
+		//Your code goes here
+         
+        int i, k = 0, l = 0; 
+        /*  k - starting row index 
+        m - ending row index 
+        l - starting column index 
+        n - ending column index 
+        i - iterator 
+        */
+        int m=matrix.length;
+        if(m==0){
+            return;
+        }
+        else{
+        int n=matrix[0].length;
+        while (k < m && l < n) { 
+            // Print the first row from the remaining rows 
+            for (i = l; i < n; ++i) { 
+                System.out.print(matrix[k][i] + " "); 
+            } 
+            k++; 
+  
+            // Print the last column from the remaining columns 
+            for (i = k; i < m; ++i) { 
+                System.out.print(matrix[i][n - 1] + " "); 
+            } 
+            n--; 
+  
+            // Print the last row from the remaining rows */ 
+            if (k < m) { 
+                for (i = n - 1; i >= l; --i) { 
+                    System.out.print(matrix[m - 1][i] + " "); 
+                } 
+                m--; 
+            } 
+  
+            // Print the first column from the remaining columns */ 
+            if (l < n) { 
+                for (i = m - 1; i >= k; --i) { 
+                    System.out.print(matrix[i][l] + " "); 
+                } 
+                l++; 
+            }
+        }
+        } 
+    } 
+	
+}
+
+7.
+ Reverse string Word Wise
+Send Feedback
+Reverse the given string word wise. That is, the last word in given string should come at 1st place, last second word at 2nd place and so on. Individual words should remain as it is.
+Input format :
+
+String in a single line
+
+Output format :
+
+Word wise reversed string in a single line
+
+sol:
+public class Solution {
+	public static String reverseWordWise(String input) {
+		// Write your code here
+        int end=input.length();
+        int i = input.length()-1;
+        String output="";
+        while(i>=0)
+        {
+            if(input.charAt(i)==' ')
+            {
+                output=output+input.substring(i+1,end)+" ";
+                end=i;
+            }
+            i--;
+        }
+        output+=input.substring(i+1,end);
+        return output;
+        
+
+	}
+}
+
+
+8.
+ Largest Unique Substring
+Send Feedback
+Given a string S, find the largest substring with no repetition i.e. largest substring which contain all unique characters.
+Input Format :
+
+String S
+
+Output Format :
+
+Largest unique substring
+
+
+sol:
+import java.util.*;
+public class solution {
+	
+	public static String findLargestUniqueSubstring(String str){
+		/* Don't write main().
+	     * Don't read input, it is passed as function argument.
+	     * Return the answer.
+	     * Taking input and printing output is handled automatically.
+	     */
+        
+	    Map<Character, Integer> visited = new HashMap<>();
+	    String output = "";
+	    for (int start = 0, end = 0; end < str.length(); end++) {
+	        char currChar = str.charAt(end);
+	        if (visited.containsKey(currChar)) {
+	            start = Math.max(visited.get(currChar)+1, start);
+	        }
+	        if (output.length() < end - start + 1) {
+	            output = str.substring(start, end + 1);
+	        }
+	        visited.put(currChar, end);
+	    }
+	    return output;
+	}
+	
+
+}
+
+9.pallindrome strings
+10. break words
+
+
