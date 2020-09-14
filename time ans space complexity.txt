@@ -1,0 +1,102 @@
+1.
+What is the time complexity of following code?
+
+while(n){ 
+  j=n; 
+  while(j>1){ 
+    j-=1; 
+  } 
+  n/=2; 
+}  
+
+ans:o(n)
+
+2.
+What is the time complexity for the following function?
+
+void fun2(int m, int n = 1)
+{
+  if (n <= 0)
+    return;
+  if (n > m)
+    return;
+  fun2(m, 2*n);
+ }  
+
+ans:o(logm)
+
+3.
+Which one of the following correctly determines the solution of the recurrence relation with T(1) = 1?
+
+T(n) = 2T(n/2) + Logn
+
+
+ans:  o(N)
+
+4.
+What is the time complexity of the following function?
+
+void sample(int n)  {
+    for (int p = n; p > 0; p=p/2) {
+        for (int q = 0; q < p; q++) {
+            print(p, “ ”, q);
+        }
+    }
+}
+
+
+ans:o(n)
+
+
+5.
+What will be the Time Complexity of following code in terms of ‘n’ ’?
+
+for(int i = 0; i < n ; i++){
+    int k = n;
+    while(k > 0){
+           k/=2;   
+    }
+}
+
+
+ans: o(nlogn)
+
+6.
+What will be the Time Complexity of following code in terms of ‘n’ ?
+
+while(n > 0){
+  n = n / 4;
+}
+
+
+ans: o(logn to the base 4)
+
+7.
+What is the time complexity of the following code :
+
+int i, j, k=0;
+for(i = n/2; i<=n; i++){
+        for(j=2; j<=n; j*=2){
+        k = k + n/2;
+    }
+}
+
+ans: o(nlogn)
+
+8.
+What is the time complexity of the following code:
+
+int count = 0 ;
+for(int i = N; i > 0; i/=2){
+    for(int j=0; j < i; j++){
+        count += 1;
+    }
+}
+
+
+ans: o(n)
+
+
+
+
+
